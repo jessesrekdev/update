@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Basic Examples - Crazy Dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+
+    
+    /* Main Content */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Section Animations */
+    .content-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+      margin-bottom: 60px;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .content-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Code Window */
+    .code-window {
+      background: #2d2d2d;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin: 30px 0;
+      transform: perspective(1000px) rotateX(5deg);
+      transition: transform 0.4s ease;
+    }
+    
+    .code-window:hover {
+      transform: perspective(1000px) rotateX(0);
+    }
+    
+    .window-header {
+      background: #1e1e1e;
+      padding: 8px 15px;
+      display: flex;
+      gap: 8px;
+    }
+    
+    .window-btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    
+    .window-btn.red { background: #ff5f56; }
+    .window-btn.yellow { background: #ffbd2e; }
+    .window-btn.green { background: #27c93f; }
+    
+    .window-body {
+      padding: 20px;
+      font-family: 'Fira Code', monospace;
+      line-height: 1.6;
+      overflow-x: auto;
+      color: #fff;
+    }
+    
+    /* Example Cards */
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    
+    .example-card {
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .example-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .example-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #4285F4;
+    }
+    
+    .example-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #4285F4;
+    }
+    
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    /* Button Styles */
+    .primary-btn {
+      padding: 12px 24px;
+      background: #4285F4;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .primary-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .example-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Syntax Highlighting */
+    .html-tag { color: #569CD6; }
+    .html-attr { color: #9CDCFE; }
+    .html-value { color: #CE9178; }
+    .html-comment { color: #6A9955; }
+    
+    /* Interactive Elements */
+    .interactive-demo {
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      border-left: 4px solid #4285F4;
+    }
+    
+    .demo-result {
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+    
+    /* Tooltip */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted #666;
+      cursor: help;
+    }
+    
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: #333;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9rem;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    
+  </style>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="menu-left">
+      <button class="icon-btn" title="Menu">
+        <svg viewBox="0 0 24 24">
+          <circle cx="5" cy="12" r="2" />
+          <circle cx="12" cy="12" r="2" />
+          <circle cx="19" cy="12" r="2" />
+        </svg>
+      </button>
+    </div>
+
+    <a href="#" class="logo">Crazy Dev</a>
+
+    <div class="menu-right">
+      <button class="icon-btn" id="toggleTheme" title="Toggle Theme" aria-label="Toggle Theme">
+        <svg id="themeIcon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <!-- Sun group -->
+          <g class="sun" style="opacity:1;">
+            <circle cx="12" cy="12" r="5" fill="orange" />
+            <g stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
+            </g>
+          </g>
+
+          <!-- Moon group -->
+          <g class="moon" style="opacity:0; transform-origin: 12px 12px; transform: scale(0.7);">
+            <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 0012 21a9 9 0 009-8.21z" fill="lightblue" />
+          </g>
+        </svg>
+      </button>
+
+      <button class="icon-btn" title="Account">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section" style="text-align: center; background: linear-gradient(135deg, #4285F4, #34A853); color: white;">
+      <h1 style="font-size: 3rem; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.2);">HTML Basic Examples</h1>
+      <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto;">In this chapter we will show some basic HTML examples. Don't worry if we use tags you haven't learned yet - you'll master them soon!</p>
+      
+      <div style="margin: 40px 0;">
+        <svg class="floating" width="250" height="200" viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="30" width="150" height="140" rx="10" fill="white" opacity="0.9"/>
+          <rect x="70" y="50" width="110" height="100" fill="#E8F0FE"/>
+          <text x="125" y="90" font-family="Arial" font-size="20" fill="#4285F4" text-anchor="middle">HTML</text>
+          <text x="125" y="120" font-family="Arial" font-size="16" fill="#EA4335" text-anchor="middle">Basic</text>
+          <text x="125" y="150" font-family="Arial" font-size="16" fill="#FBBC05" text-anchor="middle">Examples</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333; display: flex; align-items: center; gap: 15px;">
+        <i class="fas fa-file-code" style="color: #4285F4;"></i>
+        <span>HTML Documents</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">All HTML documents must start with a document type declaration: <code class="html-tag">&lt;!DOCTYPE html&gt;</code>.</p>
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">The HTML document itself begins with <code class="html-tag">&lt;html&gt;</code> and ends with <code class="html-tag">&lt;/html&gt;</code>.</p>
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">The visible part of the HTML document is between <code class="html-tag">&lt;body&gt;</code> and <code class="html-tag">&lt;/body&gt;</code>.</p>
+      
+      <div class="code-window">
+        <div class="window-header">
+          <div class="window-btn red"></div>
+          <div class="window-btn yellow"></div>
+          <div class="window-btn green"></div>
+        </div>
+        <div class="window-body">
+          <p><span class="html-tag">&lt;!DOCTYPE html&gt;</span></p>
+          <p><span class="html-tag">&lt;html&gt;</span></p>
+          <p><span class="html-tag">&lt;body&gt;</span></p>
+          <br>
+          <p><span class="html-tag">&lt;h1&gt;</span>My First Heading<span class="html-tag">&lt;/h1&gt;</span></p>
+          <p><span class="html-tag">&lt;p&gt;</span>My first paragraph.<span class="html-tag">&lt;/p&gt;</span></p>
+          <br>
+          <p><span class="html-tag">&lt;/body&gt;</span></p>
+          <p><span class="html-tag">&lt;/html&gt;</span></p>
+        </div>
+      </div>
+      
+      <div class="interactive-demo">
+        <h3 style="margin-top: 0;">Try it yourself:</h3>
+        <button class="primary-btn" onclick="runDemo('demo1')">
+          <i class="fas fa-play"></i>
+          Run Example
+        </button>
+        <div id="demo1" class="demo-result" style="display: none;">
+          <h1>My First Heading</h1>
+          <p>My first paragraph.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333; display: flex; align-items: center; gap: 15px;">
+        <i class="fas fa-exclamation-circle" style="color: #FBBC05;"></i>
+        <span>The &lt;!DOCTYPE&gt; Declaration</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">The <code class="html-tag">&lt;!DOCTYPE&gt;</code> declaration represents the document type, and helps browsers to display web pages correctly.</p>
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">It must only appear once, at the top of the page (before any HTML tags).</p>
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">The <code class="html-tag">&lt;!DOCTYPE&gt;</code> declaration is not case sensitive. For HTML5 it's simply:</p>
+      
+      <div class="code-window">
+        <div class="window-header">
+          <div class="window-btn red"></div>
+          <div class="window-btn yellow"></div>
+          <div class="window-btn green"></div>
+        </div>
+        <div class="window-body">
+          <p><span class="html-tag">&lt;!DOCTYPE html&gt;</span></p>
+        </div>
+      </div>
+      
+      <div class="example-card">
+        <div class="example-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Why It Matters</h3>
+        <p>While modern browsers will often render your page correctly without it, including the DOCTYPE ensures your page uses standards mode rather than quirks mode, which can affect how your page is displayed.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333; display: flex; align-items: center; gap: 15px;">
+        <i class="fas fa-heading" style="color: #EA4335;"></i>
+        <span>HTML Headings</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">HTML headings are defined with the <code class="html-tag">&lt;h1&gt;</code> to <code class="html-tag">&lt;h6&gt;</code> tags.</p>
+      <p style="font-size: 1.1rem; margin-bottom: 30px;"><code class="html-tag">&lt;h1&gt;</code> defines the most important heading. <code class="html-tag">&lt;h6&gt;</code> defines the least important heading.</p>
+      
+      <div class="code-window">
+        <div class="window-header">
+          <div class="window-btn red"></div>
+          <div class="window-btn yellow"></div>
+          <div class="window-btn green"></div>
+        </div>
+        <div class="window-body">
+          <p><span class="html-tag">&lt;h1&gt;</span>This is heading 1<span class="html-tag">&lt;/h1&gt;</span></p>
+          <p><span class="html-tag">&lt;h2&gt;</span>This is heading 2<span class="html-tag">&lt;/h2&gt;</span></p>
+          <p><span class="html-tag">&lt;h3&gt;</span>This is heading 3<span class="html-tag">&lt;/h3&gt;</span></p>
+          <p><span class="html-tag">&lt;h4&gt;</span>This is heading 4<span class="html-tag">&lt;/h4&gt;</span></p>
+          <p><span class="html-tag">&lt;h5&gt;</span>This is heading 5<span class="html-tag">&lt;/h5&gt;</span></p>
+          <p><span class="html-tag">&lt;h6&gt;</span>This is heading 6<span class="html-tag">&lt;/h6&gt;</span></p>
+        </div>
+      </div>
+      
+      <div class="interactive-demo">
+        <h3 style="margin-top: 0;">See the result:</h3>
+        <div class="demo-result">
+          <h1 style="margin: 10px 0; font-size: 2em;">This is heading 1</h1>
+          <h2 style="margin: 10px 0; font-size: 1.5em;">This is heading 2</h2>
+          <h3 style="margin: 10px 0; font-size: 1.17em;">This is heading 3</h3>
+          <h4 style="margin: 10px 0; font-size: 1em;">This is heading 4</h4>
+          <h5 style="margin: 10px 0; font-size: 0.83em;">This is heading 5</h5>
+          <h6 style="margin: 10px 0; font-size: 0.67em;">This is heading 6</h6>
+        </div>
+      </div>
+      
+      <div class="example-card">
+        <div class="example-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>SEO Tip</h3>
+        <p>Search engines use headings to index the structure and content of your web pages. Use headings to show the document structure, with <code>&lt;h1&gt;</code> for main headings, followed by <code>&lt;h2&gt;</code>, then <code>&lt;h3&gt;</code>, and so on.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333; display: flex; align-items: center; gap: 15px;">
+        <i class="fas fa-paragraph" style="color: #34A853;"></i>
+        <span>HTML Paragraphs</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">HTML paragraphs are defined with the <code class="html-tag">&lt;p&gt;</code> tag:</p>
+      
+      <div class="code-window">
+        <div class="window-header">
+          <div class="window-btn red"></div>
+          <div class="window-btn yellow"></div>
+          <div class="window-btn green"></div>
+        </div>
+        <div class="window-body">
+          <p><span class="html-tag">&lt;p&gt;</span>This is a paragraph.<span class="html-tag">&lt;/p&gt;</span></p>
+          <p><span class="html-tag">&lt;p&gt;</span>This is another paragraph.<span class="html-tag">&lt;/p&gt;</span></p>
+        </div>
+      </div>
+      
+      <div class="interactive-demo">
+        <h3 style="margin-top: 0;">Result:</h3>
+        <div class="demo-result">
+          <p>This is a paragraph.</p>
+          <p>This is another paragraph.</p>
+        </div>
+      </div>
+    </section>
+
+<section class="content-section">
+  <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333; display: flex; align-items: center; gap: 15px;">
+    <i class="fas fa-link" style="color: #4285F4;"></i>
+    <span>HTML Links</span>
+  </h2>
+
+  <p style="font-size: 1.1rem; margin-bottom: 20px;">HTML links are defined with the <code class="html-tag">&lt;a&gt;</code> tag. The link's destination is specified in the <span class="html-attr">href</span> attribute.</p>
+
+  <div class="code-window">
+    <div class="window-header">
+      <div class="window-btn red"></div>
+      <div class="window-btn yellow"></div>
+      <div class="window-btn green"></div>
+    </div>
+    <div class="window-body">
+      <p><span class="html-tag">&lt;a</span> <span class="html-attr">href=</span><span class="html-value">"https://www.w3schools.com"</span><span class="html-tag">&gt;</span>This is a link<span class="html-tag">&lt;/a&gt;</span></p>
+    </div>
+  </div>
+
+  <div class="interactive-demo">
+    <h3 style="margin-top: 0;">Try this link:</h3>
+    <div class="demo-result">
+      <a href="https://www.w3schools.com" style="color: #4285F4; text-decoration: none;">This is a link</a>
+    </div>
+  </div>
+
+  <div class="example-grid">
+    <div class="example-card">
+      <div class="example-icon">
+        <i class="fas fa-external-link-alt"></i>
+      </div>
+      <h3>Link Attributes</h3>
+      <p>Links can have several attributes like <code class="html-attr">target="_blank"</code> to open in a new tab, or <code class="html-attr">title="Tooltip"</code> to show additional information on hover.</p>
+    </div>
+
+    <div class="example-card">
+      <div class="example-icon">
+        <i class="fas fa-anchor"></i>
+      </div>
+      <h3>Anchor Links</h3>
+      <p>You can create links to specific sections on the same page using ID references like <code class="html-attr">href="#section-id"</code>.</p>
+    </div>
+  </div>
+</section>
+
+    <section class="content-section">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333; display: flex; align-items: center; gap: 15px;">
+        <i class="fas fa-image" style="color: #EA4335;"></i>
+        <span>HTML Images</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">HTML images are defined with the <code class="html-tag">&lt;img&gt;</code> tag. The source file (<span class="html-attr">src</span>), alternative text (<span class="html-attr">alt</span>), <span class="html-attr">width</span>, and <span class="html-attr">height</span> are provided as attributes:</p>
+      
+      <div class="code-window">
+        <div class="window-header">
+          <div class="window-btn red"></div>
+          <div class="window-btn yellow"></div>
+          <div class="window-btn green"></div>
+        </div>
+        <div class="window-body">
+          <p><span class="html-tag">&lt;img</span> <span class="html-attr">src=</span><span class="html-value">"w3schools.jpg"</span> <span class="html-attr">alt=</span><span class="html-value">"W3Schools.com"</span> <span class="html-attr">width=</span><span class="html-value">"104"</span> <span class="html-attr">height=</span><span class="html-value">"142"</span><span class="html-tag">&gt;</span></p>
+        </div>
+      </div>
+      
+      <div class="interactive-demo">
+        <h3 style="margin-top: 0;">Image Example:</h3>
+        <div class="demo-result">
+          <img src="https://via.placeholder.com/104x142" alt="Placeholder Image" width="104" height="142">
+        </div>
+      </div>
+      
+      <div class="example-card">
+        <div class="example-icon">
+          <i class="fas fa-eye-slash"></i>
+        </div>
+        <h3>Alt Text Importance</h3>
+        <p>The <code>alt</code> attribute provides alternative text for screen readers and when images can't be displayed. It's also important for SEO and accessibility compliance.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333; display: flex; align-items: center; gap: 15px;">
+        <i class="fas fa-code" style="color: #FBBC05;"></i>
+        <span>How to View HTML Source</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">Have you ever seen a Web page and wondered "Hey! How did they do that?"</p>
+      
+      <div class="example-grid">
+        <div class="example-card">
+          <div class="example-icon">
+            <i class="fas fa-file-code"></i>
+          </div>
+          <h3>View HTML Source Code</h3>
+          <p>Click <kbd>CTRL + U</kbd> in an HTML page, or right-click on the page and select <strong>"View Page Source"</strong>. This will open a new tab containing the HTML source code of the page.</p>
+        </div>
+        
+        <div class="example-card">
+          <div class="example-icon">
+            <i class="fas fa-search-plus"></i>
+          </div>
+          <h3>Inspect an HTML Element</h3>
+          <p>Right-click on an element (or a blank area), and choose <strong>"Inspect"</strong> to see what elements are made up of (you will see both the HTML and the CSS).</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin: 40px 0;">
+        <svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="20" width="360" height="210" rx="10" fill="#F1F3F4"/>
+          <rect x="30" y="30" width="340" height="190" rx="5" fill="white"/>
+          
+          <!-- Browser Window -->
+          <rect x="40" y="40" width="320" height="30" rx="3" fill="#E8F0FE"/>
+          <rect x="50" y="50" width="300" height="10" rx="2" fill="#E8EAED"/>
+          
+          <!-- Inspector Panel -->
+          <rect x="40" y="80" width="150" height="130" rx="3" fill="#2d2d2d"/>
+          <rect x="50" y="90" width="130" height="10" rx="2" fill="#444"/>
+          <rect x="50" y="110" width="100" height="5" rx="2" fill="#444"/>
+          <rect x="50" y="120" width="80" height="5" rx="2" fill="#444"/>
+          <rect x="50" y="130" width="120" height="5" rx="2" fill="#444"/>
+          
+          <!-- Web Page -->
+          <rect x="200" y="80" width="160" height="130" rx="3" fill="#E8F0FE"/>
+          <rect x="210" y="90" width="140" height="20" rx="2" fill="white"/>
+          <rect x="220" y="95" width="120" height="10" rx="2" fill="#E8EAED"/>
+          <rect x="210" y="120" width="140" height="80" rx="2" fill="white"/>
+          <rect x="220" y="130" width="120" height="10" rx="2" fill="#E8EAED"/>
+          <rect x="220" y="150" width="100" height="10" rx="2" fill="#E8EAED"/>
+          <rect x="220" y="170" width="80" height="10" rx="2" fill="#E8EAED"/>
+          
+          <!-- Inspector Icon -->
+          <circle cx="370" cy="55" r="8" fill="#4285F4"/>
+          <path d="M365 50 L375 50 L375 60 L365 60 Z" fill="white"/>
+          <path d="M367 52 L373 52 L373 58 L367 58 Z" fill="#4285F4"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="content-section" style="text-align: center; background: linear-gradient(135deg, #4285F4, #EA4335); color: white;">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">Ready to Practice?</h2>
+      <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">Try our interactive HTML editor with live preview to experiment with these examples and more!</p>
+      
+      <button class="primary-btn" style="background: white; color: #4285F4;">
+        <i class="fas fa-play"></i>
+        Launch HTML Editor
+      </button>
+      
+      <div style="margin-top: 40px;">
+        <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="30" width="200" height="150" rx="10" fill="white" opacity="0.9"/>
+          <rect x="70" y="50" width="160" height="110" fill="#E8F0FE"/>
+          
+          <!-- Editor Side -->
+          <rect x="80" y="60" width="60" height="90" fill="white"/>
+          <rect x="85" y="65" width="50" height="10" rx="2" fill="#E8EAED"/>
+          <rect x="85" y="80" width="40" height="10" rx="2" fill="#E8EAED"/>
+          <rect x="85" y="95" width="30" height="10" rx="2" fill="#E8EAED"/>
+          <rect x="85" y="110" width="50" height="10" rx="2" fill="#E8EAED"/>
+          <rect x="85" y="125" width="20" height="10" rx="2" fill="#E8EAED"/>
+          
+          <!-- Preview Side -->
+          <rect x="160" y="60" width="80" height="90" fill="white"/>
+          <rect x="170" y="80" width="60" height="10" rx="2" fill="#34A853"/>
+          <rect x="170" y="100" width="60" height="10" rx="2" fill="#FBBC05"/>
+          <rect x="170" y="120" width="60" height="10" rx="2" fill="#EA4335"/>
+          
+          <!-- Buttons -->
+          <circle cx="270" cy="100" r="15" fill="#34A853"/>
+          <polygon points="265,95 265,105 275,100" fill="white"/>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+    <div style="display: flex; gap: 20px; justify-content: center; margin: 30px 0; font-family: Arial, sans-serif;">
+
+    <!-- Preview Button -->
+    <button id="preview" style="
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background-color: #f0f0f0; 
+    border: 2px solid #3498db; 
+    color: #3498db; 
+    padding: 12px 22px; 
+    border-radius: 30px; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#3498db'; this.style.color='#fff';"
+      onmouseout="this.style.backgroundColor='#f0f0f0'; this.style.color='#3498db';">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#3498db" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Preview
+    </button>
+
+    <!-- Continue Button -->
+    <button id="next" style="
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background-color: #3498db; 
+    border: 2px solid #3498db; 
+    color: #fff; 
+    padding: 12px 22px; 
+    border-radius: 30px; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#2874a6';" onmouseout="this.style.backgroundColor='#3498db';">
+      Continue
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <script>
+document.getElementById("next").addEventListener("click", function () {
+  window.open('../elements', '_self');
+});
+document.getElementById("preview").addEventListener("click", function () {
+  window.open('../editors', '_self');
+
+});
+
+
+    </script>
+
+  </div>
+
+  <footer id="footer"></footer>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  
+  <script>
+    // GSAP Animations
+    document.addEventListener('DOMContentLoaded', () => {
+      // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+      // Function to make elements visible as they scroll into view
+      function animateOnScroll() {
+        const sections = document.querySelectorAll('.content-section');
+
+        sections.forEach(section => {
+          gsap.fromTo(section, 
+            { opacity: 0, y: 30 },
+            { 
+              opacity: 1, 
+              y: 0, 
+              duration: 0.8,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 85%", 
+                toggleActions: "play none none none"
+              }
+            }
+          );
+        });
+      }
+
+      // Initial call to set up the animations
+      animateOnScroll();
+
+      // Theme Toggle Functionality
+      const toggleThemeBtn = document.getElementById('toggleTheme');
+      const themeIcon = document.getElementById('themeIcon');
+      const sun = themeIcon.querySelector('.sun');
+      const moon = themeIcon.querySelector('.moon');
+
+      let isDark = false;
+
+      toggleThemeBtn.addEventListener('click', () => {
+        isDark = !isDark;
+        document.body.classList.toggle('dark-mode');
+
+        if (isDark) {
+          // Animate to dark mode
+          gsap.to(sun, { opacity: 0, duration: 0.5, ease: "power2.in" });
+          gsap.to(moon, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" });
+        } else {
+          // Animate to light mode
+          gsap.to(sun, { opacity: 1, duration: 0.5, ease: "power2.out" });
+          gsap.to(moon, { opacity: 0, scale: 0.7, duration: 0.5, ease: "power2.in" });
+        }
+      });
+      
+      // Interactive Demo Functionality
+      window.runDemo = function(demoId) {
+        const demoResult = document.getElementById(demoId);
+        if (demoResult.style.display === 'block') {
+          demoResult.style.display = 'none';
+        } else {
+          demoResult.style.display = 'block';
+        }
+      };
+
+    });
+
+    
+  </script>
+  <script src="/script.js"></script>
+  <script src="/template.js"></script>
+</body>
+
+</html>
+

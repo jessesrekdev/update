@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Introduction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <div class="menu-left">
+      <button class="icon-btn" title="Menu">
+        <svg viewBox="0 0 24 24">
+          <circle cx="5" cy="12" r="2" />
+          <circle cx="12" cy="12" r="2" />
+          <circle cx="19" cy="12" r="2" />
+        </svg>
+      </button>
+    </div>
+
+    <a href="#" class="logo">Crazy Dev</a>
+
+    <div class="menu-right">
+      <button class="icon-btn" id="toggleTheme" title="Toggle Theme" aria-label="Toggle Theme">
+  <svg id="themeIcon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Sun group -->
+    <g class="sun" style="opacity:1;">
+      <circle cx="12" cy="12" r="5" fill="orange"/>
+      <g stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="1" x2="12" y2="4" />
+        <line x1="12" y1="20" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="4" y2="12" />
+        <line x1="20" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
+      </g>
+    </g>
+
+    <!-- Moon group -->
+    <g class="moon" style="opacity:0; transform-origin: 12px 12px; transform: scale(0.7);">
+      <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 0012 21a9 9 0 009-8.21z" fill="lightblue"/>
+    </g>
+  </svg>
+</button>
+
+      <button class="icon-btn" title="Account">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+<section style="margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+  <h2>HTML Editors</h2>
+  <p >A simple text editor is all you need to learn HTML.</p>
+</section>
+
+<section style="margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+  <h2>Learn HTML Using Notepad or TextEdit</h2>
+  <ol>
+    <li>Web pages can be created and modified by using professional HTML editors.</li>
+    <li>However, for learning HTML we recommend a simple text editor like Notepad (PC) or TextEdit (Mac).</li>
+    <li>We believe that using a simple text editor is a good way to learn HTML.</li>
+    <li>Follow the steps below to create your first web page with Notepad or TextEdit.</li>
+    <li>HTML elements tell the browser how to display the content.</li>
+    <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
+  </ol>
+</section>
+
+
+<!-- Include Prism CSS for dark theme -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+<section style="position: relative; max-width: 700px; margin: 20px auto; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;">
+  <h3 style="padding: 16px 20px 16px 20px; margin: 0; color: black;">An Example HTML Document</h3>
+  <pre id="html-code" style="padding: 16px 20px 60px 20px; overflow-x: auto; margin: 0; border-radius: 0 0 8px 8px;">
+    <code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code>
+  </pre>
+  
+  <div style="position: absolute; bottom: 12px; right: 12px; display: flex; gap: 8px;">
+    <button id="copy-btn" style="padding: 8px 14px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Copy</button>
+    <button id="try-btn" style="padding: 8px 14px; background: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Try Code</button>
+  </div>
+</section>
+
+<!-- Prism.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+
+<script>
+  const code = `<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html> </script>
+
+<section style="max-width: 700px; margin: 30px auto; line-height: 1.6; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
+  <h2 style="border-bottom: 2px solid #4285F4; padding-bottom: 8px; margin-bottom: 20px;">Example Explained</h2>
+  <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 30px;">
+    <li><code>&lt;!DOCTYPE html&gt;</code> declaration defines that this document is an HTML5 document</li>
+    <li><code>&lt;html&gt;</code> element is the root element of an HTML page</li>
+    <li><code>&lt;head&gt;</code> element contains meta information about the HTML page</li>
+    <li><code>&lt;title&gt;</code> element specifies a title for the HTML page (shown in browser tab or title bar)</li>
+    <li><code>&lt;body&gt;</code> element defines the document's body, container for visible content like headings, paragraphs, images, etc.</li>
+    <li><code>&lt;h1&gt;</code> element defines a large heading</li>
+    <li><code>&lt;p&gt;</code> element defines a paragraph</li>
+  </ul>
+
+  <h2 style="border-bottom: 2px solid #4285F4; padding-bottom: 8px; margin-bottom: 20px;">What is an HTML Element?</h2>
+  <p>An HTML element is defined by a start tag, some content, and an end tag:</p>
+  <pre style="background: #f4f4f4; padding-top: 0; padding-top: 20px; padding-left: 5px;padding-right: 5px; border-radius: 10px; overflow-x: auto; margin-bottom: 10px; margin-left: 2px; margin-right: 10px; color: #000">
+&lt;tagname&gt; Content goes here... &lt;/tagname&gt;
+  </pre>
+  <p>The HTML <strong>element</strong> is everything from the start tag to the end tag:</p>
+  <pre style="background: #f4f4f4; padding-top: 0; padding-top: 20px; padding-left: 5px;padding-right: 5px; border-radius: 10px; overflow-x: auto; margin-bottom: 10px; margin-left: 2px; margin-right: 10px; color: #000">
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+  </pre>
+
+  <table style="width: 100%; border-collapse: collapse; margin-top: 30px; text-align: left;">
+    <thead>
+      <tr style="background: #4285F4; color: white;">
+        <th style="padding: 8px;">Part</th>
+        <th style="padding: 8px;">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #ddd;">
+        <td style="padding: 8px; font-family: monospace;">&lt;h1&gt;</td>
+        <td style="padding: 8px;">Start tag</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ddd;">
+        <td style="padding: 8px; font-family: monospace;">My First Heading</td>
+        <td style="padding: 8px;">Element content</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; font-family: monospace;">&lt;/h1&gt;</td>
+        <td style="padding: 8px;">End tag</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div style="
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  background-color: #fff3cd;
+  border: 1.5px solid #ffecb5;
+  border-left: 6px solid #ffca28;
+  border-radius: 6px;
+  color: #664d03;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(255, 202, 40, 0.3);
+  ">
+  <strong>Note:</strong> Some HTML elements have no content (like the <code>&lt;br&gt;</code> element). These elements are called empty elements. Empty elements do not have an end tag!
+</div>
+  
+
+<section style="max-width: 750px; margin: 40px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.5;">
+
+  <h2 style="border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-bottom: 25px; margin-left: 10px;">Web Browsers</h2>
+  <p style="font-size: 1.1rem; margin-bottom: 15px; margin-left: 10px;" >
+    The purpose of a web browser (<strong>Chrome, Edge, Firefox, Safari</strong>) is to read HTML documents and display them correctly.
+  </p>
+  <p style="font-size: 1rem; margin-bottom: 25px; margin-left: 10px;">
+    A browser does not display the HTML tags, but uses them to determine how to display the document:
+  </p>
+
+  
+
+  <h3 style="margin-left: 10px; margin-bottom: 0px;">HTML Page Structure</h3>
+  <p style="margin-left: 10px; margin-bottom: 20px;">
+    Below is a visualization of an HTML page structure:
+  </p>
+
+  <pre style="
+    background-color: #2d2d2d; 
+    color: #f8f8f2; 
+    padding: 20px; 
+    border-radius: 8px; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 1rem; 
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+  ">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;This is a heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;p&gt;This is another paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+
+  <div style="
+    max-width: 700px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  background-color: #fff3cd;
+  border: 1.5px solid #ffecb5;
+  border-left: 6px solid #ffca28;
+  border-radius: 6px;
+  color: #664d03;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(255, 202, 40, 0.3);>>
+  ">
+    <strong>Note:</strong> The content inside the <code>&lt;body&gt;</code> section will be displayed in a browser. The content inside the <code>&lt;title&gt;</code> element will be shown in the browser's title bar or in the page's tab.
+  </div>
+</section>
+
+<div style="display: flex; gap: 20px; justify-content: center; margin: 30px 0; font-family: Arial, sans-serif;">
+
+  <!-- Preview Button -->
+  <button style="
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background-color: #f0f0f0; 
+    border: 2px solid #3498db; 
+    color: #3498db; 
+    padding: 12px 22px; 
+    border-radius: 30px; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  " 
+  onmouseover="this.style.backgroundColor='#3498db'; this.style.color='#fff';"
+  onmouseout="this.style.backgroundColor='#f0f0f0'; this.style.color='#3498db';"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#3498db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    Preview
+  </button>
+
+  <!-- Continue Button -->
+  <button style="
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background-color: #3498db; 
+    border: 2px solid #3498db; 
+    color: #fff; 
+    padding: 12px 22px; 
+    border-radius: 30px; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  " 
+  onmouseover="this.style.backgroundColor='#2874a6';"
+  onmouseout="this.style.backgroundColor='#3498db';"
+  >
+    Continue
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+
+</div>
+
+
+
+
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+<style>
+  #toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 25%;
+    z-index: 9999;
+  }
+
+  .toast {
+    display: flex;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    animation: fadein 0.3s, fadeout 0.3s 1.7s forwards;
+  }
+
+  .toast .footer-logo {
+    border-radius: 50%;
+    width: auto;
+    height: 20px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 12px;
+    user-select: none;
+  }
+
+  @keyframes fadein {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeout {
+    to {opacity: 0; transform: translateY(10px);}
+  }
+</style>
+
+<script>
+const codee = 'me';
+  function showToast() {
+    const container = document.getElementById('toast-container');
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+
+    const logo = document.createElement('div');
+    logo.className = 'footer-logo';
+    logo.textContent = 'Crazy Dev';
+
+    const text = document.createElement('span');
+    text.textContent = 'Copied code';
+
+    toast.appendChild(logo);
+    toast.appendChild(text);
+    container.appendChild(toast);
+
+    setTimeout(() => {
+      container.removeChild(toast);
+    }, 2000);
+  }
+
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    showToast();
+    
+    navigator.clipboard?.writeText(code).catch(() => { 
+  const t = document.createElement('textarea'); 
+  t.value = codee; 
+  document.body.appendChild(t); 
+  t.select(); 
+  document.execCommand('copy'); 
+  document.body.removeChild(t); 
+});
+  });
+</script>
+
+        
+
+  
+  <footer id="footer">
+</footer>
+
+<script src="/script.js"></script>
+<script src="/template.js"></script>
+</body>
+</html>
