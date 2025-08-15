@@ -434,19 +434,7 @@
             </div>
           </div>
           
-          <div style="background: #FFEBEE; padding: 20px; border-radius: 8px;">
-            <h4 style="font-size: 1.2rem; margin-bottom: 15px; color: #C62828; display: flex; align-items: center; gap: 8px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#F44336"/>
-              </svg>
-              Not Recommended
-            </h4>
-            <div class="code-window" style="background: #2d2d2d; border-radius: 8px; padding: 15px; font-family: 'Fira Code', monospace; color: #f8f8f2;">
-              <p><span style="color: #569CD6;">&lt;a</span> <span style="color: #9CDCFE;">HREF=</span><span style="color: #CE9178;">"..."</span><span style="color: #569CD6;">&gt;</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
+
       
       <div style="margin: 40px 0;">
         <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #333;">Always Quote Attribute Values</h3>

@@ -9,11 +9,45 @@
 }
 
 body.dark-mode {
-  --bg: #1e1e1e;
+  --bg: #121212;
   --text: #f0f0f0;
   --primary: #ff6600;
   --glass: rgba(255, 255, 255, 0.05);
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Links */
+body.dark-mode a {
+  color: #90caf9;
+}
+
+/* Headers */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+  color: #ffffff;
+}
+
+/* Footer */
+body.dark-mode #footer {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Optional: Add a soft shadow for depth in dark mode */
+body.dark-mode .card, 
+body.dark-mode .box, 
+body.dark-mode .container {
+  background-color: #121212;
 }
 
 * {

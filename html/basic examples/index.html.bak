@@ -192,8 +192,8 @@
     </header>
 
     <section class="content-section" style="text-align: center;">
-      <h1 style="font-size: 1rem; margin-bo 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.2);">HTML Basic Examples</h1>
-      <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto;">In this chapter we will show some basic HTML examples. Don't worry if we use tags you haven't learned yet - you'll master them soon!</p>
+      <h1 style="font-size: 1rem; margin: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.2);">HTML Basic Examples</h1>
+      <p style="font-size: 1.2rem; margin: 0 auto;">In this chapter we will show some basic HTML examples. Don't worry if we use tags you haven't learned yet - you'll master them soon!</p>
       
       <div style="margin: 40px 0;">
         <svg class="floating" width="250" height="200" viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">

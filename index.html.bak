@@ -10,55 +10,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="menu-left">
-      <button class="icon-btn" title="Menu">
-        <svg viewBox="0 0 24 24">
-          <circle cx="5" cy="12" r="2" />
-          <circle cx="12" cy="12" r="2" />
-          <circle cx="19" cy="12" r="2" />
-        </svg>
-      </button>
-    </div>
-
-    <a href="#" class="logo">Crazy Dev</a>
-
-    <div class="menu-right">
-      <button class="icon-btn" id="toggleTheme" title="Toggle Theme" aria-label="Toggle Theme">
-  <svg id="themeIcon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <!-- Sun group -->
-    <g class="sun" style="opacity:1;">
-      <circle cx="12" cy="12" r="5" fill="orange"/>
-      <g stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="1" x2="12" y2="4" />
-        <line x1="12" y1="20" x2="12" y2="23" />
-        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
-        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
-        <line x1="1" y1="12" x2="4" y2="12" />
-        <line x1="20" y1="12" x2="23" y2="12" />
-        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
-        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
-      </g>
-    </g>
-
-    <!-- Moon group -->
-    <g class="moon" style="opacity:0; transform-origin: 12px 12px; transform: scale(0.7);">
-      <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 0012 21a9 9 0 009-8.21z" fill="lightblue"/>
-    </g>
-  </svg>
-</button>
-
-      <button class="icon-btn" title="Account">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
-        </svg>
-      </button>
-    </div>
-  </header>
+  <header id="header">
+    </header>
 
   <main>
         <div class="container">
-        <p style="font-size: 35px; font-weight: bold;4_">Learn to Code</p>
+        <p style="font-size: 35px; font-weight: bold;">Learn to Code</p>
         
         
         <svg width="100px" height="100px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -118,8 +75,25 @@
   <footer id="footer">
 </footer>
 
-  
+  <script>
+    // Open introduction folder on html element click
+html.addEventListener('click', () => {
+  window.open('html/', '_self');
+});
+
+// Style all h1 elements as requested
+document.querySelectorAll('h1').forEach(h1 => {
+  h1.style.fontWeight = 'bold';
+  h1.style.background = 'linear-gradient(to right, #4285F4, #9B72CB)';
+  h1.style.webkitBackgroundClip = 'text';
+  h1.style.backgroundClip = 'text';
+  h1.style.webkitTextFillColor = 'transparent';
+  h1.style.color = 'transparent';
+  h1.style.fontSize = '2em';
+});
+  </script>
+
 <script src="script.js"></script>
-jate.js"></script>
+<script src="template.js"></script>
 </body>
 </html>

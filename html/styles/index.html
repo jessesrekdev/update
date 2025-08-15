@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Styles - Crazy Dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+  <style>
+    :root {
+      --primary: #0071e3;
+      --secondary: #34c759;
+      --danger: #ff3b30;
+      --warning: #ff9500;
+      --dark: #1d1d1f;
+      --light: #f5f5f7;
+      --gray: #86868b;
+    }
+    
+    
+    /* Apple-inspired UI */
+    .apple-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .apple-header {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--primary), #7d34eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .apple-subheader {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 30px 0 15px;
+      color: var(--dark);
+    }
+    
+    /* Style Attribute Visualization */
+    .style-visualization {
+      display: flex;
+      align-items: center;
+      background: var(--light);
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px 0;
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .style-angle {
+      color: var(--gray);
+      font-weight: bold;
+    }
+    
+    .style-property {
+      color: var(--primary);
+    }
+    
+    .style-value {
+      color: var(--secondary);
+    }
+    
+    /* Color Palette */
+    .color-palette {
+      display: flex;
+      gap: 15px;
+      margin: 30px 0;
+    }
+    
+    .color-box {
+      flex: 1;
+      height: 100px;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+      color: white;
+      font-weight: 600;
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    
+    /* Code Blocks */
+    .code-block {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 25px 0;
+      font-family: 'Fira Code', monospace;
+      color: #d4d4d4;
+      overflow-x: auto;
+      position: relative;
+    }
+    
+    .code-block::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 12px 0 0 12px;
+    }
+    
+    .code-tag {
+      color: #569cd6;
+    }
+    
+    .code-attr {
+      color: #9cdcfe;
+    }
+    
+    .code-value {
+      color: #ce9178;
+    }
+    
+    /* Live Preview */
+    .live-preview {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+    
+    /* Exercise */
+    .exercise-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    
+    .exercise-option {
+      display: inline-block;
+      background: var(--light);
+      border-radius: 12px;
+      padding: 15px 25px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .exercise-option:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .color-palette {
+        flex-direction: column;
+      }
+      
+      .apple-header {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header"></header>
+
+  <main>
+    <section class="apple-card" id="intro">
+      <h1 class="apple-header">HTML Styles</h1>
+      <p style="font-size: 1.1rem; color: var(--gray);">The HTML style attribute is used to add styles to an element, such as color, font, size, and more.</p>
+      
+      <!-- Animated Preview -->
+      <div style="display: flex; gap: 20px; margin: 40px 0;">
+        <div id="red-example" style="flex: 1; background: var(--danger); color: white; padding: 20px; border-radius: 12px; text-align: center; transform: translateY(20px); opacity: 0;">
+          I am Red
+        </div>
+        <div id="blue-example" style="flex: 1; background: var(--primary); color: white; padding: 20px; border-radius: 12px; text-align: center; transform: translateY(20px); opacity: 0;">
+          I am Blue
+        </div>
+        <div id="big-example" style="flex: 1; background: var(--secondary); color: white; padding: 20px; border-radius: 12px; text-align: center; font-size: 1.2rem; transform: translateY(20px); opacity: 0;">
+          I am Green
+        </div>
+      </div>
+    </section>
+
+    <section class="apple-card" id="style-attribute">
+      <h2 class="apple-subheader">The HTML Style Attribute</h2>
+      <p>Setting the style of an HTML element can be done with the style attribute.</p>
+      
+      <div class="style-visualization">
+        <span class="style-angle">&lt;</span>tagname 
+        <span class="style-property">style</span>=<span class="style-value">"property:value;"</span>
+        <span class="style-angle">&gt;</span>
+      </div>
+      
+      <p>The property is a CSS property. The value is a CSS value.</p>
+      
+      <div style="background: #fff8e1; padding: 15px; border-left: 4px solid var(--warning); margin: 20px 0; border-radius: 0 8px 8px 0;">
+        <p style="margin: 0; color: #5f6368;"><strong>Note:</strong> You'll learn more about CSS later in this tutorial.</p>
+      </div>
+    </section>
+
+    <section class="apple-card" id="background-color">
+      <h2 class="apple-subheader">Background Color</h2>
+      <p>The CSS <code>background-color</code> property defines the background color for an HTML element.</p>
+      
+      <h3 style="font-weight: 600; margin: 25px 0 15px;">Example</h3>
+      <p>Set the background color for a page to powderblue:</p>
+      
+      <div class="code-block">
+        <p><span class="code-tag">&lt;body</span> <span class="code-attr">style</span>=<span class="code-value">"background-color:powderblue;"</span><span class="code-tag">&gt;</span></p>
+        <br>
+        <p><span class="code-tag">&lt;h1&gt;</span>This is a heading<span class="code-tag">&lt;/h1&gt;</span></p>
+        <p><span class="code-tag">&lt;p&gt;</span>This is a paragraph.<span class="code-tag">&lt;/p&gt;</span></p>
+        <br>
+        <p><span class="code-tag">&lt;/body&gt;</span></p>
+      </div>
+      
+      <div style="text-align: center; margin: 25px 0;">
+        <button onclick="window.open('https://www.w3schools.com/html/tryit.asp?filename=tryhtml_styles_background-color', '_blank')" style="
+          padding: 12px 24px;
+          background: var(--primary);
+          color: white;
+          border: none;
+          border-radius: 30px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+        " onmouseover="this.style.transform='scale(1.05)';" 
+        onmouseout="this.style.transform='scale(1)';">
+          <i class="fas fa-play"></i>
+          Try it Yourself »
+        </button>
+      </div>
+      
+      <h3 style="font-weight: 600; margin: 25px 0 15px;">Example</h3>
+      <p>Set background color for two different elements:</p>
+      
+      <div class="code-block">
+        <p><span class="code-tag">&lt;body&gt;</span></p>
+        <br>
+        <p><span class="code-tag">&lt;h1</span> <span class="code-attr">style</span>=<span class="code-value">"background-color:powderblue;"</span><span class="code-tag">&gt;</span>This is a heading<span class="code-tag">&lt;/h1&gt;</span></p>
+        <p><span class="code-tag">&lt;p</span> <span class="code-attr">style</span>=<span class="code-value">"background-color:tomato;"</span><span class="code-tag">&gt;</span>This is a paragraph.<span class="code-tag">&lt;/p&gt;</span></p>
+        <br>
+        <p><span class="code-tag">&lt;/body&gt;</span></p>
+      </div>
+      
+      <!-- Color Palette Animation -->
+      <div class="color-palette">
+        <div class="color-box" style="background: powderblue;">powderblue</div>
+        <div class="color-box" style="background: tomato;">tomato</div>
+        <div class="color-box" style="background: #7d34eb;">#7d34eb</div>
+        <div class="color-box" style="background: #34c759;">#34c759</div>
+      </div>
+    </section>
+
+    <section class="apple-card" id="text-color">
+      <h2 class="apple-subheader">Text Color</h2>
+      <p>The CSS <code>color</code> property defines the text color for an HTML element:</p>
+      
+      <div class="code-block">
+        <p><span class="code-tag">&lt;h1</span> <span class="code-attr">style</span>=<span class="code-value">"color:blue;"</span><span class="code-tag">&gt;</span>This is a heading<span class="code-tag">&lt;/h1&gt;</span></p>
+        <p><span class="code-tag">&lt;p</span> <span class="code-attr">style</span>=<span class="code-value">"color:red;"</span><span class="code-tag">&gt;</span>This is a paragraph.<span class="code-tag">&lt;/p&gt;</span></p>
+      </div>
+      
+      <!-- Live Preview -->
+      <div class="live-preview">
+        <h1 style="color: blue; margin-top: 0;">This is a heading</h1>
+        <p style="color: red;">This is a paragraph.</p>
+      </div>
+    </section>
+
+    <section class="apple-card" id="fonts">
+      <h2 class="apple-subheader">Fonts</h2>
+      <p>The CSS <code>font-family</code> property defines the font to be used for an HTML element:</p>
+      
+      <div class="code-block">
+        <p><span class="code-tag">&lt;h1</span> <span class="code-attr">style</span>=<span class="code-value">"font-family:verdana;"</span><span class="code-tag">&gt;</span>This is a heading<span class="code-tag">&lt;/h1&gt;</span></p>
+        <p><span class="code-tag">&lt;p</span> <span class="code-attr">style</span>=<span class="code-value">"font-family:courier;"</span><span class="code-tag">&gt;</span>This is a paragraph.<span class="code-tag">&lt;/p&gt;</span></p>
+      </div>
+      
+      <!-- Font Preview -->
+      <div style="display: flex; gap: 30px; margin: 25px 0;">
+        <div style="flex: 1;">
+          <h3 style="font-family: Verdana, sans-serif; color: var(--primary);">Verdana</h3>
+          <p style="font-family: Verdana, sans-serif;">The quick brown fox jumps over the lazy dog</p>
+        </div>
+        <div style="flex: 1;">
+          <h3 style="font-family: Courier, monospace; color: var(--primary);">Courier</h3>
+          <p style="font-family: Courier, monospace;">The quick brown fox jumps over the lazy dog</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="apple-card" id="text-size">
+      <h2 class="apple-subheader">Text Size</h2>
+      <p>The CSS <code>font-size</code> property defines the text size for an HTML element:</p>
+      
+      <div class="code-block">
+        <p><span class="code-tag">&lt;h1</span> <span class="code-attr">style</span>=<span class="code-value">"font-size:300%;"</span><span class="code-tag">&gt;</span>This is a heading<span class="code-tag">&lt;/h1&gt;</span></p>
+        <p><span class="code-tag">&lt;p</span> <span class="code-attr">style</span>=<span class="code-value">"font-size:160%;"</span><span class="code-tag">&gt;</span>This is a paragraph.<span class="code-tag">&lt;/p&gt;</span></p>
+      </div>
+      
+      <!-- Size Preview -->
+      <div style="margin: 25px 0;">
+        <h1 style="font-size: 300%; margin-bottom: 15px; color: var(--primary);">This is a heading</h1>
+        <p style="font-size: 160%;">This is a paragraph.</p>
+      </div>
+    </section>
+
+    <section class="apple-card" id="text-alignment">
+      <h2 class="apple-subheader">Text Alignment</h2>
+      <p>The CSS <code>text-align</code> property defines the horizontal text alignment for an HTML element:</p>
+      
+      <div class="code-block">
+        <p><span class="code-tag">&lt;h1</span> <span class="code-attr">style</span>=<span class="code-value">"text-align:center;"</span><span class="code-tag">&gt;</span>Centered Heading<span class="code-tag">&lt;/h1&gt;</span></p>
+        <p><span class="code-tag">&lt;p</span> <span class="code-attr">style</span>=<span class="code-value">"text-align:center;"</span><span class="code-tag">&gt;</span>Centered paragraph.<span class="code-tag">&lt;/p&gt;</span></p>
+      </div>
+      
+      <!-- Alignment Preview -->
+      <div style="margin: 25px 0; background: var(--light); padding: 20px; border-radius: 12px;">
+        <h1 style="text-align: center; color: var(--primary);">Centered Heading</h1>
+        <p style="text-align: center;">This paragraph is centered. The text-align property can be set to left, right, or center.</p>
+      </div>
+    </section>
+
+    <section class="apple-card" id="summary">
+      <h2 class="apple-subheader">Chapter Summary</h2>
+      <ul style="padding-left: 20px;">
+        <li style="margin-bottom: 10px;">Use the <code>style</code> attribute for styling HTML elements</li>
+        <li style="margin-bottom: 10px;">Use <code>background-color</code> for background color</li>
+        <li style="margin-bottom: 10px;">Use <code>color</code> for text colors</li>
+        <li style="margin-bottom: 10px;">Use <code>font-family</code> for text fonts</li>
+        <li style="margin-bottom: 10px;">Use <code>font-size</code> for text sizes</li>
+        <li>Use <code>text-align</code> for text alignment</li>
+      </ul>
+    </section>
+
+    <section class="exercise-card">
+      <h2 style="font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <i class="fas fa-question-circle" style="color: var(--primary);"></i>
+        <span>Exercise</span>
+      </h2>
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">What is a correct way to add a background color to an HTML document?</p>
+      
+      <div>
+        <div class="exercise-option" data-correct="true">
+          &lt;body style='background-color:pink;'&gt;
+        </div>
+        <div class="exercise-option">
+          &lt;body background-color='pink;'&gt;
+        </div>
+        <div class="exercise-option">
+          &lt;body style='bgcolor:pink;'&gt;
+        </div>
+      </div>
+      
+      <div id="exerciseFeedback" style="margin-top: 20px; display: none;">
+        <p style="font-size: 1.1rem; font-weight: 600;"></p>
+      </div>
+    </section>
+  </main>
+
+  <div style="display: flex; gap: 20px; justify-content: center; margin: 30px 0; font-family: Arial, sans-serif;">
+    <!-- Preview Button -->
+    <button id="preview" style="
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+      background-color: #f0f0f0; 
+      border: 2px solid #3498db; 
+      color: #3498db; 
+      padding: 12px 22px; 
+      border-radius: 30px; 
+      font-weight: 600; 
+      font-size: 1rem; 
+      cursor: pointer; 
+      transition: background-color 0.3s ease, color 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#3498db'; this.style.color='#fff';"
+    onmouseout="this.style.backgroundColor='#f0f0f0'; this.style.color='#3498db';">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#3498db" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Preview
+    </button>
+
+    <!-- Continue Button -->
+    <button id="next" style="
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+      background-color: #3498db; 
+      border: 2px solid #3498db; 
+      color: #fff; 
+      padding: 12px 22px; 
+      border-radius: 30px; 
+      font-weight: 600; 
+      font-size: 1rem; 
+      cursor: pointer; 
+      transition: background-color 0.3s ease, color 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#2874a6';" onmouseout="this.style.backgroundColor='#3498db';">
+      Continue
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script src="/script.js"></script>
+  <script src="/template.js"></script>
+  
+  <script>
+    // GSAP Animations
+    document.addEventListener('DOMContentLoaded', () => {
+      // Register ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Animate all apple cards on scroll
+      gsap.utils.toArray('.apple-card').forEach((card, i) => {
+        gsap.fromTo(card, 
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: i * 0.1,
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+      
+      // Animate example boxes
+      gsap.to("#red-example", {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: "#intro",
+          start: "top 70%",
+          toggleActions: "play none none none"
+        }
+      });
+      
+      gsap.to("#blue-example", {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: "#intro",
+          start: "top 70%",
+          toggleActions: "play none none none"
+        }
+      });
+      
+      gsap.to("#big-example", {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: "#intro",
+          start: "top 70%",
+          toggleActions: "play none none none"
+        }
+      });
+      
+      // Animate color boxes
+      gsap.utils.toArray('.color-box').forEach((box, i) => {
+        gsap.to(box, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.6,
+          delay: i * 0.1,
+          scrollTrigger: {
+            trigger: "#background-color",
+            start: "top 70%",
+            toggleActions: "play none none none"
+          }
+        });
+      });
+      
+      // Exercise button logic
+      const exerciseOptions = document.querySelectorAll('.exercise-option');
+      const feedback = document.getElementById('exerciseFeedback');
+      const feedbackText = feedback.querySelector('p');
+      
+      exerciseOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+          exerciseOptions.forEach(opt => {
+            opt.style.background = '#f5f5f7';
+            opt.style.color = '';
+          });
+          
+          option.style.background = '#0071e3';
+          option.style.color = 'white';
+          
+          const isCorrect = option.dataset.correct === 'true';
+          
+          if (isCorrect) {
+            feedback.style.backgroundColor = '#e8f5e9';
+            feedback.style.borderLeft = '4px solid #34c759';
+            feedbackText.style.color = '#1d1d1f';
+            feedbackText.innerHTML = '<strong>Correct!</strong> The style attribute with background-color property is the proper way to set a background color.';
+            
+            // Confetti animation
+            const confettiPieces = 30;
+            for (let i = 0; i < confettiPieces; i++) {
+              const confetti = document.createElement('div');
+              confetti.style.position = 'absolute';
+              confetti.style.width = '10px';
+              confetti.style.height = '10px';
+              confetti.style.background = ['#0071e3', '#ff3b30', '#ff9500', '#34c759'][Math.floor(Math.random() * 4)];
+              confetti.style.borderRadius = '50%';
+              confetti.style.left = `${Math.random() * 100}%`;
+              confetti.style.top = '-10px';
+              confetti.style.opacity = '0';
+              feedback.appendChild(confetti);
+              
+              gsap.to(confetti, {
+                y: 200,
+                x: (Math.random() - 0.5) * 100,
+                opacity: 1,
+                duration: 1 + Math.random(),
+                ease: "power2.out",
+                onComplete: () => {
+                  confetti.remove();
+                }
+              });
+            }
+          } else {
+            feedback.style.backgroundColor = '#ffebee';
+            feedback.style.borderLeft = '4px solid #ff3b30';
+            feedbackText.style.color = '#1d1d1f';
+            feedbackText.innerHTML = '<strong>Incorrect.</strong> Only the style attribute with background-color is valid in modern HTML.';
+          }
+          
+          gsap.fromTo(feedback, 
+            { opacity: 0, y: 10, display: 'none' },
+            { opacity: 1, y: 0, duration: 0.4, display: 'block' }
+          );
+        });
+      });
+      
+      // Floating animation for headers
+      const headers = document.querySelectorAll('.apple-header, .apple-subheader');
+      headers.forEach(header => {
+        gsap.to(header, {
+          y: -5,
+          duration: 2,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut"
+        });
+      });
+      
+      // Pulse animation for code blocks
+      const codeBlocks = document.querySelectorAll('.code-block');
+      codeBlocks.forEach(block => {
+        gsap.to(block, {
+          boxShadow: '0 0 20px rgba(0, 113, 227, 0.3)',
+          duration: 2,
+          yoyo: true,
+          repeat: -1,
+          ease: "power1.inOut"
+        });
+      });
+    });
+  </script>
+</body>
+</html>
