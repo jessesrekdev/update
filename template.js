@@ -5,7 +5,7 @@ footer.innerHTML = `
       <a href="#" title="TikTok">
         <img src="/res/tik-tok.png" width="30" height="30" alt="CSS3 Logo" style="display: block;">
       </a>
-      <a href="#" title="YouTube">
+      <a href="https://bit.ly/JesseProYoutubeChannel" title="YouTube">
         <img src="/res/youtube.png" width="30" height="30" alt="CSS3 Logo" style="display: block;">
       </a>
       <a href="https://t.me/+0wluDwl9G_JlYjA0" title="Telegram">
