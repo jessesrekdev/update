@@ -143,58 +143,13 @@
 </head>
 
 <body>
-  <header>
-    <div class="menu-left">
-      <button class="icon-btn" title="Menu">
-        <svg viewBox="0 0 24 24">
-          <circle cx="5" cy="12" r="2" />
-          <circle cx="12" cy="12" r="2" />
-          <circle cx="19" cy="12" r="2" />
-        </svg>
-      </button>
-    </div>
-
-    <a href="#" class="logo">Crazy Dev</a>
-
-    <div class="menu-right">
-      <button class="icon-btn" id="toggleTheme" title="Toggle Theme" aria-label="Toggle Theme">
-        <svg id="themeIcon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
-          <!-- Sun group -->
-          <g class="sun" style="opacity:1;">
-            <circle cx="12" cy="12" r="5" fill="orange" />
-            <g stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="1" x2="12" y2="4" />
-              <line x1="12" y1="20" x2="12" y2="23" />
-              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
-              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
-              <line x1="1" y1="12" x2="4" y2="12" />
-              <line x1="20" y1="12" x2="23" y2="12" />
-              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
-              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
-            </g>
-          </g>
-
-          <!-- Moon group -->
-          <g class="moon" style="opacity:0; transform-origin: 12px 12px; transform: scale(0.7);">
-            <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 0012 21a9 9 0 009-8.21z" fill="lightblue" />
-          </g>
-        </svg>
-      </button>
-
-      <button class="icon-btn" title="Account">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
-        </svg>
-      </button>
-    </div>
-  </header>
+<header id="header">
+    </header>
 
   <main style="max-width: 1000px; margin: 0 auto; padding: 20px;">
     <section class="element-card" style="margin-bottom: 40px;">
       <h1 style="font-size: 2.5rem; margin-bottom: 20px;">HTML Elements</h1>
-      <p style="font-size: 1.2rem; line-height: 1.6; color: #555;">An HTML element is defined by a start tag, some content, and an end tag.</p>
+      <p style="font-size: 1.2rem; line-height: 1.6; ">An HTML element is defined by a start tag, some content, and an end tag.</p>
       
       <div style="text-align: center; margin: 40px 0;">
         <svg class="floating" width="250" height="200" viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">
@@ -210,7 +165,7 @@
     </section>
 
     <section class="element-card" style="margin-bottom: 60px;">
-      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333;">HTML Elements</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 20px; ">HTML Elements</h2>
       <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">The HTML element is everything from the start tag to the end tag:</p>
       
       <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -265,7 +220,7 @@
     </section>
 
     <section class="element-card" style="margin-bottom: 60px;">
-      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333;">Nested HTML Elements</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 20px; ">Nested HTML Elements</h2>
       <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">HTML elements can be nested (this means that elements can contain other elements). All HTML documents consist of nested HTML elements.</p>
       
       <p style="font-size: 1.1rem; margin-bottom: 20px;">The following example contains four HTML elements (<code>&lt;html&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code>):</p>
@@ -282,7 +237,7 @@
         <p><span style="color: #569CD6;">&lt;/html&gt;</span></p>
       </div>
       
-      <div class="nested-diagram">
+      <div class="nested-diagram" style="color: #000; ">
         <div class="nested-box" data-tag="html" style="border-color: #EA4335;">
           <div class="nested-box" data-tag="body" style="border-color: #FBBC05;">
             <div class="nested-box" data-tag="h1" style="border-color: #34A853;">My First Heading</div>
@@ -293,29 +248,40 @@
       
       <h3 style="font-size: 1.5rem; margin: 30px 0 15px;">Example Explained</h3>
       
-      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0;">
+      <div class="ex" style=" padding: 20px; border-radius: 8px; margin: 15px 0;color: #555; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" >
         <p>The <code>&lt;html&gt;</code> element is the root element and it defines the whole HTML document.</p>
         <p>It has a start tag <code>&lt;html&gt;</code> and an end tag <code>&lt;/html&gt;</code>.</p>
       </div>
       
-      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0;">
+      <div class="ex" style=" padding: 20px; border-radius: 8px; margin: 15px 0; color: #555; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
         <p>The <code>&lt;body&gt;</code> element defines the document's body.</p>
         <p>It has a start tag <code>&lt;body&gt;</code> and an end tag <code>&lt;/body&gt;</code>.</p>
       </div>
       
-      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0;">
+      <div class="ex" style=" padding: 20px; border-radius: 8px; margin: 15px 0; color: #555; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
         <p>The <code>&lt;h1&gt;</code> element defines a heading.</p>
         <p>It has a start tag <code>&lt;h1&gt;</code> and an end tag <code>&lt;/h1&gt;</code>.</p>
       </div>
       
-      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0;">
+      <div  class="ex" style="l padding: 20px; border-radius: 8px; margin: 15px 0; color: #555; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
         <p>The <code>&lt;p&gt;</code> element defines a paragraph.</p>
         <p>It has a start tag <code>&lt;p&gt;</code> and an end tag <code>&lt;/p&gt;</code>.</p>
       </div>
     </section>
+    
+    <style>
+    
+ .ex {
+ background: #f8f9fa;
+ }
+    body.dark-mode .ex {
+    background: #121212;
+    color: #fff;
+        }
+    </style>
 
-    <section class="element-card" style="margin-bottom: 60px;">
-      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333;">Never Skip the End Tag</h2>
+    <section class="element-card" style="margin-bottom: 60px; ">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; ">Never Skip the End Tag</h2>
       <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">Some HTML elements will display correctly, even if you forget the end tag:</p>
       
       <div class="code-window" style="background: #2d2d2d; border-radius: 8px; padding: 15px; font-family: 'Fira Code', monospace; color: #f8f8f2; margin: 20px 0;">
@@ -346,7 +312,7 @@
     </section>
 
     <section class="element-card" style="margin-bottom: 60px;">
-      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333;">Empty HTML Elements</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 20px; ">Empty HTML Elements</h2>
       <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">HTML elements with no content are called empty elements.</p>
       <p style="font-size: 1.1rem; margin-bottom: 20px;">The <code>&lt;br&gt;</code> tag defines a line break, and is an empty element without a closing tag:</p>
       
@@ -367,7 +333,7 @@
     </section>
 
     <section class="element-card" style="margin-bottom: 60px;">
-      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333;">HTML is Not Case Sensitive</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 20px; ">HTML is Not Case Sensitive</h2>
       <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">HTML tags are not case sensitive: <code>&lt;P&gt;</code> means the same as <code>&lt;p&gt;</code>.</p>
       
       <p style="font-size: 1.1rem; margin-bottom: 20px;">The HTML standard does not require lowercase tags, but W3C recommends lowercase in HTML, and demands lowercase for stricter document types like XHTML.</p>
@@ -392,8 +358,8 @@
       </div>
     </section>
 
-    <section class="element-card" style="margin: 60px 0; background: #F8F9FA; padding: 30px; border-radius: 10px; text-align: center;">
-      <h2 style="font-size: 1.8rem; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <section class="element-card" style="margin: 60px 0; color: #000;background: #F8F9FA; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+      <h2 style="font-size: 1.8rem; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; color: #000;">
         <i class="fas fa-question-circle" style="color: #4285F4;"></i>
         <span>Exercise</span>
       </h2>
@@ -437,7 +403,7 @@
     </section>
 
     <section class="element-card" style="margin: 60px 0;">
-      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #333;">HTML Tag Reference</h2>
+      <h2 style="font-size: 2rem; margin-bottom: 20px; ">HTML Tag Reference</h2>
       <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">W3Schools' tag reference contains additional information about these tags and their attributes.</p>
       
       <div style="overflow-x: auto;">
