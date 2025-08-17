@@ -9,11 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header id="header">
-    </header>
+  <header id="header">
+  </header>
 
   <section style="margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
     <h2>HTML Introduction</h2>
@@ -34,25 +35,31 @@
   </section>
 
 
-<!-- Apple-style Code Section -->
-<section style="position: relative; margin: 20px 0; border-radius: 12px; background: #f5f5f7; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
-  
-  <!-- Header Bar with SVG icons -->
-  <div style="display: flex; align-items: center; padding: 10px 16px; background: #e0e0e0; border-radius: 12px 12px 0 0; gap: 8px;">
-    <!-- Red, Yellow, Green circles like macOS -->
-    <svg width="12" height="12"><circle cx="6" cy="6" r="6" fill="#ff5f56"/></svg>
-    <svg width="12" height="12"><circle cx="6" cy="6" r="6" fill="#ffbd2e"/></svg>
-    <svg width="12" height="12"><circle cx="6" cy="6" r="6" fill="#27c93f"/></svg>
-    <span style="margin-left: 12px; font-weight: 600; color: #333;">index.html</span>
-  </div>
-  
-  <!-- Code Area -->
-  <pre style="padding: 16px; margin: 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.5; color: #1c1c1e; background: #f5f5f7; border-radius: 0 0 12px 12px;">
+  <!-- Apple-style Code Section -->
+  <section
+    style="position: relative; margin: 20px 0; border-radius: 12px; margin: 0 10px;background: #f5f5f7; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+
+    <!-- Header Bar with SVG icons -->
+    <div
+      style="display: flex; align-items: center; padding: 10px 16px; background: #000000; border-radius: 12px 12px 0 0; gap: 8px;">
+      <!-- Red, Yellow, Green circles like macOS -->
+      <svg width="12" height="12">
+        <circle cx="6" cy="6" r="6" fill="#ff5f56" />
+      </svg>
+      <svg width="12" height="12">
+        <circle cx="6" cy="6" r="6" fill="#ffbd2e" />
+      </svg>
+      <svg width="12" height="12">
+        <circle cx="6" cy="6" r="6" fill="#27c93f" />
+      </svg>
+      <span style="margin-left: 12px; font-weight: 600; color: #ffffff;">index.html</span>
+    </div>
+
+    <!-- Code Area -->
+    <pre
+      style="padding: 16px; margin: 0; overflow-x: auto; font-family: monospace; font-size: 0.95rem; line-height: 1.9; max-width: 100%;  color: #eeeeee; background: #000000; border-radius: 0 0 12px 12px;">
 &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
 &lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
   &lt;title&gt;My Page&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -62,53 +69,22 @@
 &lt;/html&gt;
   </pre>
 
-  <!-- Try Code Button -->
-  <div style="position: absolute; bottom: 12px; right: 12px;">
-    <button id="try-btn" style="padding: 8px 14px; background: #007aff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px;">
-      <!-- SVG for Play -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="5 3 15 8 5 13 5 3"></polygon>
-      </svg>
-      Try Code
-    </button>
-  </div>
+    <!-- Try Code Button -->
+    <div style="position: absolute; bottom: 12px; right: 12px;">
+      <button id="try-btn"
+        style="padding: 8px 14px; background: #007aff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+        <!-- SVG for Play -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 15 8 5 13 5 3"></polygon>
+        </svg>
+        Try Code
+      </button>
+    </div>
 
-</section>
+  </section>
 
-<script>
-document.getElementById('try-btn').addEventListener('click', () => {
-    const htmlCode =`<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>My Page</title>
-</head>
-<body>
-<h1>Hello, world!</h1>
-<p>This is a paragraph.</p>
-`;
 
-    // Create a form to submit to CodePen
-    const form = document.createElement('form');
-    form.action = 'https://codepen.io/pen/define';
-    form.method = 'POST';
-    form.target = '_blank';
-
-    const input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = 'data';
-    input.value = JSON.stringify({
-        title: "My HTML Example",
-        html: htmlCode,
-        js: "",
-        css: ""
-    });
-
-    form.appendChild(input);
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
-});
-</script>
 
   <section
     style="max-width: 700px; margin: 30px auto; line-height: 1.6; margin-bottom: 0px; margin-left: 10px; margin-right: 10px;">
@@ -181,8 +157,7 @@ document.getElementById('try-btn').addEventListener('click', () => {
   </div>
 
 
-  <section
-    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;">
+  <section style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;">
 
     <h2 style="border-bottom: 3px solid #3498db; padding-bottom: 8px; margin-bottom: 25px; margin-left: 10px;">Web
       Browsers</h2>
@@ -202,8 +177,8 @@ document.getElementById('try-btn').addEventListener('click', () => {
     </p>
 
     <pre style="
-    background-color: #2d2d2d; 
-    color: #f8f8f2; 
+    background-color: #000000; 
+    color: #ffffff; 
     padding: 20px; 
     border-radius: 8px; 
     font-family: 'Courier New', Courier, monospace; 
@@ -293,119 +268,61 @@ document.getElementById('try-btn').addEventListener('click', () => {
     </button>
 
     <script>
-document.getElementById("next").addEventListener("click", function () {
-  window.open('../editors', '_self');
-});
-document.getElementById("preview").addEventListener("click", function () {
-  window.open('../', '_self');
+      document.getElementById("next").addEventListener("click", function () {
+        window.open('../editors', '_self');
+      });
+      document.getElementById("preview").addEventListener("click", function () {
+        window.open('../', '_self');
 
-});
+      });
 
 
     </script>
 
   </div>
 
-
-
-
-
   <!-- Toast container -->
   <div id="toast-container"></div>
 
-  <style>
-    #toast-container {
-      position: fixed;
-      bottom: 20px;
-      right: 25%;
-      z-index: 9999;
+
+
+  <script>
+
+    function showToast() {
+      const container = document.getElementById('toast-container');
+
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+
+      const logo = document.createElement('div');
+      logo.className = 'footer-logo';
+      logo.textContent = 'Crazy Dev';
+
+      const text = document.createElement('span');
+      text.textContent = 'Trying code';
+
+      toast.appendChild(logo);
+      toast.appendChild(text);
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        container.removeChild(toast);
+      }, 2000);
     }
 
-    .toast {
-      display: flex;
-      align-items: center;
-      background: #333;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      animation: fadein 0.3s, fadeout 0.3s 1.7s forwards;
-    }
-
-    .toast .footer-logo {
-      border-radius: 50%;
-      width: auto;
-      height: 20px;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      margin-right: 8px;
-      font-size: 12px;
-      user-select: none;
-    }
-
-    @keyframes fadein {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeout {
-      to {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-    }
-  </style>
-
-   <script>
-
-        function showToast() {
-    const container = document.getElementById('toast-container');
-
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-
-    const logo = document.createElement('div');
-    logo.className = 'footer-logo';
-    logo.textContent = 'Crazy Dev';
-
-    const text = document.createElement('span');
-    text.textContent = 'Trying code';
-
-    toast.appendChild(logo);
-    toast.appendChild(text);
-    container.appendChild(toast);
-
-    setTimeout(() => {
-      container.removeChild(toast);
-    }, 2000);
-  }
-
-        document.getElementById('try-btn').addEventListener('click', () => {
-            showToast();
-        });
+    document.getElementById('try-btn').addEventListener('click', () => {
+      showToast();
+    });
 
   </script>
-
-
 
 
   <footer id="footer">
   </footer>
 
-  <script src="/script.js"></script>
   <script src="/template.js"></script>
+  <script src="/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

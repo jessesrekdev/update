@@ -10,181 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-  
-    
-    .content-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Code Window */
-    .code-window {
-      background: #2d2d2d;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      margin: 30px 0;
-      transform: perspective(1000px) rotateX(5deg);
-      transition: transform 0.4s ease;
-    }
-    
-    .code-window:hover {
-      transform: perspective(1000px) rotateX(0);
-    }
-    
-    .window-header {
-      background: #1e1e1e;
-      padding: 8px 15px;
-      display: flex;
-      gap: 8px;
-    }
-    
-    .window-btn {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-    
-    .window-btn.red { background: #ff5f56; }
-    .window-btn.yellow { background: #ffbd2e; }
-    .window-btn.green { background: #27c93f; }
-    
-    .window-body {
-      padding: 20px;
-      font-family: 'Fira Code', monospace;
-      line-height: 1.6;
-      overflow-x: auto;
-      color: #fff;
-    }
-    
-    /* Example Cards */
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    
-    .example-card {
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .example-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    
-    .example-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: #4285F4;
-    }
-    
-    .example-icon {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #4285F4;
-    }
-    
-    /* Floating Animation */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    .floating {
-      animation: float 4s ease-in-out infinite;
-    }
-    
-    /* Button Styles */
-    .primary-btn {
-      padding: 12px 24px;
-      background: #4285F4;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .primary-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
-    }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .example-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    /* Syntax Highlighting */
-    .html-tag { color: #569CD6; }
-    .html-attr { color: #9CDCFE; }
-    .html-value { color: #CE9178; }
-    .html-comment { color: #6A9955; }
-    
-    /* Interactive Elements */
-    .interactive-demo {
-      border-radius: 8px;
-      padding: 20px;
-      margin:  0;
-      border-left: 4px solid #4285F4;
-    }
-    
-    .demo-result {
-      padding: 20px;
-      margin-top: 15px;
-      border-radius: 5px;
-    }
-    
-    /* Tooltip */
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted #666;
-      cursor: help;
-    }
-    
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 200px;
-      background-color: #333;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 0.9rem;
-    }
-    
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
 
-    
-  </style>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -226,10 +54,8 @@
           <p><span class="html-tag">&lt;!DOCTYPE html&gt;</span></p>
           <p><span class="html-tag">&lt;html&gt;</span></p>
           <p><span class="html-tag">&lt;body&gt;</span></p>
-          <br>
           <p><span class="html-tag">&lt;h1&gt;</span>My First Heading<span class="html-tag">&lt;/h1&gt;</span></p>
           <p><span class="html-tag">&lt;p&gt;</span>My first paragraph.<span class="html-tag">&lt;/p&gt;</span></p>
-          <br>
           <p><span class="html-tag">&lt;/body&gt;</span></p>
           <p><span class="html-tag">&lt;/html&gt;</span></p>
         </div>
@@ -561,76 +387,10 @@ document.getElementById("preview").addEventListener("click", function () {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   
-  <script>
-    // GSAP Animations
-    document.addEventListener('DOMContentLoaded', () => {
-      // Register ScrollTrigger plugin
-            gsap.registerPlugin(ScrollTrigger);
 
-      // Function to make elements visible as they scroll into view
-      function animateOnScroll() {
-        const sections = document.querySelectorAll('.content-section');
-
-        sections.forEach(section => {
-          gsap.fromTo(section, 
-            { opacity: 0, y: 30 },
-            { 
-              opacity: 1, 
-              y: 0, 
-              duration: 0.8,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 85%", 
-                toggleActions: "play none none none"
-              }
-            }
-          );
-        });
-      }
-
-      // Initial call to set up the animations
-      animateOnScroll();
-
-      // Theme Toggle Functionality
-      const toggleThemeBtn = document.getElementById('toggleTheme');
-      const themeIcon = document.getElementById('themeIcon');
-      const sun = themeIcon.querySelector('.sun');
-      const moon = themeIcon.querySelector('.moon');
-
-      let isDark = false;
-
-      toggleThemeBtn.addEventListener('click', () => {
-        isDark = !isDark;
-        document.body.classList.toggle('dark-mode');
-
-        if (isDark) {
-          // Animate to dark mode
-          gsap.to(sun, { opacity: 0, duration: 0.5, ease: "power2.in" });
-          gsap.to(moon, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" });
-        } else {
-          // Animate to light mode
-          gsap.to(sun, { opacity: 1, duration: 0.5, ease: "power2.out" });
-          gsap.to(moon, { opacity: 0, scale: 0.7, duration: 0.5, ease: "power2.in" });
-        }
-      });
-      
-      // Interactive Demo Functionality
-      window.runDemo = function(demoId) {
-        const demoResult = document.getElementById(demoId);
-        if (demoResult.style.display === 'block') {
-          demoResult.style.display = 'none';
-        } else {
-          demoResult.style.display = 'block';
-        }
-      };
-
-    });
-
-    
-  </script>
   <script src="/template.js"></script>
   <script src="/script.js"></script>
+  <script src="script.js"></script>
   
 </body>
 

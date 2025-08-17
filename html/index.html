@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +10,7 @@
 
   <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
   <header>
     <div class="menu-left">
@@ -25,92 +27,97 @@
 
     <div class="menu-right">
       <button class="icon-btn" id="toggleTheme" title="Toggle Theme" aria-label="Toggle Theme">
-  <svg id="themeIcon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <!-- Sun group -->
-    <g class="sun" style="opacity:1;">
-      <circle cx="12" cy="12" r="5" fill="orange"/>
-      <g stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="1" x2="12" y2="4" />
-        <line x1="12" y1="20" x2="12" y2="23" />
-        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
-        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
-        <line x1="1" y1="12" x2="4" y2="12" />
-        <line x1="20" y1="12" x2="23" y2="12" />
-        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
-        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
-      </g>
-    </g>
+        <svg id="themeIcon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <!-- Sun group -->
+          <g class="sun" style="opacity:1;">
+            <circle cx="12" cy="12" r="5" fill="orange" />
+            <g stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
+            </g>
+          </g>
 
-    <!-- Moon group -->
-    <g class="moon" style="opacity:0; transform-origin: 12px 12px; transform: scale(0.7);">
-      <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 0012 21a9 9 0 009-8.21z" fill="lightblue"/>
-    </g>
-  </svg>
-</button>
+          <!-- Moon group -->
+          <g class="moon" style="opacity:0; transform-origin: 12px 12px; transform: scale(0.7);">
+            <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 0012 21a9 9 0 009-8.21z" fill="lightblue" />
+          </g>
+        </svg>
+      </button>
 
       <button class="icon-btn" title="Account">
         <svg viewBox="0 0 24 24">
-          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+          <path
+            d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
         </svg>
       </button>
     </div>
   </header>
 
   <main>
-        <div class="container">
-        <p style="font-size: 35px; font-weight: bold;">HTML</p>
-        
-        
-        <svg width="100px" height="100px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ff00ff">
-        <animate attributeName="stop-color" values="#ff00ff;#00ffff;#ffff00;#ff00ff" dur="4s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#00ffff">
-        <animate attributeName="stop-color" values="#00ffff;#ffff00;#ff00ff;#00ffff" dur="4s" repeatCount="indefinite"/>
-      </stop>
-    </linearGradient>
-  </defs>
-  
-  <!-- Center line with gradient -->
-  <path d="M8.01005 0.858582L6.01005 14.8586L7.98995 15.1414L9.98995 1.14142L8.01005 0.858582Z" fill="url(#gradient)"/>
-  
-  <!-- Right bracket with gradient -->
-  <path d="M12.5 11.5L11.0858 10.0858L13.1716 8L11.0858 5.91422L12.5 4.5L16 8L12.5 11.5Z" fill="url(#gradient)">
-    <animateTransform attributeName="transform" type="translate" values="0,0; 1,0; 0,0" dur="2s" repeatCount="indefinite"/>
-  </path>
-  
-  <!-- Left bracket with gradient -->
-  <path d="M2.82843 8L4.91421 10.0858L3.5 11.5L0 8L3.5 4.5L4.91421 5.91422L2.82843 8Z" fill="url(#gradient)">
-    <animateTransform attributeName="transform" type="translate" values="0,0; -1,0; 0,0" dur="2s" repeatCount="indefinite"/>
-  </path>
-</svg>
-        
-        <p class="subtitle">Basic For Web Development</p>
-        
-        
-        <h3 style="margin-top:50px;">Not Sure Where To Begin?</h3>
-        
-          <!-- HTML Card -->
-  <div class="card" id="html">
-    <img src="/res/html-5.png" width="100" height="100" alt="CSS3 Logo" style="display: block; ">
-    <h2>HTML</h2>
-    <p>HTML is the backbone of all web pages, defining structure and content.</p>
-  </div>
+    <div class="container">
+      <p style="font-size: 35px; font-weight: bold;">HTML 5</p>
 
-  
-  <footer id="footer">
-</footer>
 
-<script>
-  // Open introduction folder on html element click
-html.addEventListener('click', () => {
-  window.open('introduction/', '_self');
-});
-</script>
-  
-<script src="/script.js"></script>
-<script src="/template.js"></script>
+      <svg width="100px" height="100px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ff00ff">
+              <animate attributeName="stop-color" values="#ff00ff;#00ffff;#ffff00;#ff00ff" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stop-color="#00ffff">
+              <animate attributeName="stop-color" values="#00ffff;#ffff00;#ff00ff;#00ffff" dur="4s"
+                repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+        </defs>
+
+        <!-- Center line with gradient -->
+        <path d="M8.01005 0.858582L6.01005 14.8586L7.98995 15.1414L9.98995 1.14142L8.01005 0.858582Z"
+          fill="url(#gradient)" />
+
+        <!-- Right bracket with gradient -->
+        <path d="M12.5 11.5L11.0858 10.0858L13.1716 8L11.0858 5.91422L12.5 4.5L16 8L12.5 11.5Z" fill="url(#gradient)">
+          <animateTransform attributeName="transform" type="translate" values="0,0; 1,0; 0,0" dur="2s"
+            repeatCount="indefinite" />
+        </path>
+
+        <!-- Left bracket with gradient -->
+        <path d="M2.82843 8L4.91421 10.0858L3.5 11.5L0 8L3.5 4.5L4.91421 5.91422L2.82843 8Z" fill="url(#gradient)">
+          <animateTransform attributeName="transform" type="translate" values="0,0; -1,0; 0,0" dur="2s"
+            repeatCount="indefinite" />
+        </path>
+      </svg>
+
+      <p class="subtitle">Basic For Web Development</p>
+      
+      <!-- HTML Card -->
+      <div class="card" id="html">
+        <img src="/res/html-5.png" width="100" height="100" alt="CSS3 Logo" style="display: block; ">
+        <h2>HTML</h2>
+        <p>Start Now Crazy Dev !</p>
+      </div>
+
+
+      <footer id="footer">
+      </footer>
+
+      <script>
+        // Open introduction folder on html element click
+        html.addEventListener('click', () => {
+          window.open('introduction/', '_self');
+        });
+      </script>
+
+      <script src="/script.js"></script>
+      <script src="/template.js"></script>
 </body>
+
 </html>

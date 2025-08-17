@@ -1,0 +1,274 @@
+    /* Editor Steps Animation */
+    .editor-step {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+    }
+
+    .editor-step.visible {
+        opacity: 1;
+    }
+
+    /* Platform Tabs */
+    .platform-tabs {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    .platform-tab {
+        padding: 10px 20px;
+        background: #f0f0f0;
+        border-radius: 30px;
+        color: #000;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .platform-tab.dark-mode {
+        padding: 10px 20px;
+        background: #f0f0f0;
+        border-radius: 30px;
+        color: #000;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .platform-tab.active {
+        background: #4285F4;
+        color: white;
+    }
+
+    /* Code Window */
+    .code-window {
+        background: #000000;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        margin: 30px 0;
+        transform: perspective(1000px) rotateX(5deg);
+        transition: transform 0.4s ease;
+    }
+
+    .code-window:hover {
+        transform: perspective(1000px) rotateX(0);
+    }
+
+    .window-header {
+        background: #2b2828;
+        padding: 8px 15px;
+        display: flex;
+        gap: 8px;
+    }
+
+    .window-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .window-btn.red {
+        background: #ff5f56;
+    }
+
+    .window-btn.yellow {
+        background: #ffbd2e;
+    }
+
+    .window-btn.green {
+        background: #27c93f;
+    }
+
+    .window-body {
+        padding: 20px;
+        font-family: 'Fira Code', monospace;
+        color: #f8f8f2;
+        line-height: 1.6;
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    .window-body.dark-mode {
+        color: #fff;
+    }
+
+
+    /* Feature Cards */
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+    }
+    body.dark-mode .feature-card {
+        border: 1px solid #eee;
+        background: #121212;
+        color: #ffffff;
+    }
+
+    .feature-card {
+        background: #f5eeee00;
+        color: #000000;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid #000000;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #4285F4;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .floating {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .platform-tabs {
+            flex-direction: column;
+        }
+    }
+
+    .xcode-window {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        font-family: -apple-system, sans-serif;
+    }
+
+    .xcode-titlebar {
+        background: #000000;
+        padding: 8px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .xcode-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .xcode-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .xcode-btn-close {
+        background: #ff5f56;
+    }
+
+    .xcode-btn-min {
+        background: #ffbd2e;
+    }
+
+    .xcode-btn-max {
+        background: #27c93f;
+    }
+
+    .xcode-filename {
+        color: #ffffff;
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+    .xcode-editor {
+        background: #000000;
+        padding: 15px;
+        color: #e0e0e0;
+        text-align: left !important;
+    }
+
+    .xcode-line-numbers {
+        color: #5a5a5a;
+        margin-right: 15px;
+        user-select: none;
+        display: block;
+    }
+
+        /* Updated Syntax Highlighting */
+        .xcode-html-bracket {
+            color: #fffefe;
+        }
+
+        /* Grey for < > */
+        .xcode-html-tag {
+            color: #008cff;
+        }
+
+        /* Blue for html */
+        .xcode-html-attr {
+            color: #24aae4;
+        }
+
+        /* Light blue for lang */
+        .xcode-html-equals {
+            color: #ffffff;
+        }
+
+        /* Grey for = */
+        .xcode-html-value {
+            color: #ce9178;
+        }
+
+        /* Orange for "en" */
+        .xcode-html-doctype {
+            color: #008cff;
+        }
+
+        /* Blue for !DOCTYPE */
+        .xcode-html-text {
+            color: #e0e0e0;
+        }
+
+        /* iPhone 12 (and similar small devices) responsive styles */
+@media only screen and (max-width: 428px) { /* Covers iPhone 12/13/14 Plus */
+    .xcode-line-numbers {
+        margin-right: 15px;
+        display: none;
+    }
+}
+
+/* Portrait orientation tweaks */
+@media only screen 
+    and (max-width: 428px) 
+    and (orientation: portrait) {
+    
+}
+
+/* Landscape orientation tweaks */
+@media only screen 
+    and (max-width: 926px) /* iPhone 12/13/14 Pro Max landscape */
+    and (orientation: landscape) {
+
+}
+
+/* iPhone 12/13/14 specific (390px width) */
+@media only screen 
+    and (max-width: 390px) {
+  
+}
