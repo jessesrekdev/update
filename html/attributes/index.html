@@ -247,7 +247,69 @@
         </svg>
       </div>
     </section>
+
+      <div style="display: flex; gap: 20px; justify-content: center; margin: 30px 0; font-family: Arial, sans-serif;">
+
+    <!-- Preview Button -->
+    <button id="preview" style="
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background-color: #f0f0f0; 
+    border: 2px solid #3498db; 
+    color: #3498db; 
+    padding: 12px 22px; 
+    border-radius: 30px; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#3498db'; this.style.color='#fff';"
+      onmouseout="this.style.backgroundColor='#f0f0f0'; this.style.color='#3498db';">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#3498db" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Preview
+    </button>
+
+    <!-- Continue Button -->
+    <button id="next" style="
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    background-color: #3498db; 
+    border: 2px solid #3498db; 
+    color: #fff; 
+    padding: 12px 22px; 
+    border-radius: 30px; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+  " onmouseover="this.style.backgroundColor='#2874a6';" onmouseout="this.style.backgroundColor='#3498db';">
+      Continue
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" width="20" height="20" viewBox="0 0 24 24">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <script>
+      document.getElementById("next").addEventListener("click", function () {
+        window.open('../headings', '_self');
+      });
+      document.getElementById("preview").addEventListener("click", function () {
+        window.open('../elements', '_self');
+
+      });
+
+
+    </script>
+
+  </div>
   </main>
+  
 
   <footer id="footer" class="site-footer">
   </footer>

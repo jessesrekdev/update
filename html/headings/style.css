@@ -1,0 +1,239 @@
+    /* Heading Styles */
+    h1 {
+      font-size: 2.8rem;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h1:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    h2 {
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin: 2.5rem 0 1.5rem;
+    }
+    
+    h3 {
+      font-size: 1.8rem;
+      color: var(--dark);
+      margin: 2rem 0 1rem;
+    }
+    
+    /* Card Styles */
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 30px;
+      margin-bottom: 40px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    
+    /* Code Window */
+    .code-window {
+      background: #2d2d2d;
+      border-radius: 8px;
+      padding: 20px;
+      font-family: 'Fira Code', monospace;
+      color: #f8f8f2;
+      margin: 25px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .code-window:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: rgba(0,0,0,0.2);
+    }
+    
+    .code-window:after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ff5f56;
+      box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+    }
+    
+    /* Tag Visualization */
+    .tag-visual {
+      display: inline-flex;
+      align-items: center;
+      background: #f0f4ff;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-family: 'Fira Code', monospace;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    
+    .tag-visual .tag-angle {
+      color: #5f6368;
+      font-weight: bold;
+    }
+    
+    /* Note Box */
+    .note-box {
+      background: #FFF8E1;
+      padding: 20px;
+      border-left: 4px solid #FFC107;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    /* Warning Box */
+    .warning-box {
+      background: #FFEBEE;
+      padding: 20px;
+      border-left: 4px solid #F44336;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    /* Exercise Box */
+    .exercise-box {
+      background: #F8F9FA;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .exercise-box:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #4285F4, #34A853, #EA4335, #FBBC05);
+    }
+    
+    /* Button Styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #3367d6;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+    }
+    
+    /* Headings Visualization */
+    .headings-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 30px 0;
+    }
+    
+    .heading-item {
+      padding: 15px 20px;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .heading-item:hover {
+      transform: translateX(10px);
+    }
+    
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .card {
+        padding: 20px;
+      }
+    }
+    
+    /* Initial Hidden State for Animation */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    /* Table Styles */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    
+    .styled-table th {
+      background: var(--primary);
+      color: white;
+      padding: 15px;
+      text-align: left;
+    }
+    
+    .styled-table td {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .styled-table tr:hover {
+      background: #f8f9fa;
+    }
