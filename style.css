@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-    * {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 :root {
   --bg: #f2f2f2;
   --text: #111;
@@ -31,11 +32,11 @@ body.dark-mode a {
 }
 
 /* Headers */
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3, 
-body.dark-mode h4, 
-body.dark-mode h5, 
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
 body.dark-mode h6 {
   color: #ffffff;
 }
@@ -47,27 +48,35 @@ body.dark-mode #footer {
 }
 
 /* Optional: Add a soft shadow for depth in dark mode */
-body.dark-mode .card, 
-body.dark-mode .box, 
+body.dark-mode .card,
+body.dark-mode .box,
 body.dark-mode .container {
   background-color: #121212;
 }
 
 * {
-  overscroll-behavior: none;  /* disables scroll chaining & pull-to-refresh */
-  scroll-behavior: smooth;    /* smooth scrolling */
-  touch-action: pan-x pan-y;  /* allow normal scrolling */
-  -webkit-overflow-scrolling: touch; 
+  overscroll-behavior: none;
+  /* disables scroll chaining & pull-to-refresh */
+  scroll-behavior: smooth;
+  /* smooth scrolling */
+  touch-action: pan-x pan-y;
+  /* allow normal scrolling */
+  -webkit-overflow-scrolling: touch;
   font-family: Verdana;
 }
 
-html, body {
+html,
+body {
   overscroll-behavior: none;
   scroll-behavior: smooth;
   height: 100%;
   margin: 0;
   padding: 0;
   touch-action: pan-x pan-y;
+}
+body {
+  overflow-x: hidden;
+
 }
 
 body {
@@ -108,14 +117,18 @@ header {
   z-index: 999;
 }
 
-.menu-left, .menu-right {
+.menu-left,
+.menu-right {
   display: flex;
   align-items: center;
   gap: 0.8rem;
 }
+
 .menu-right {
-margin-right: 30px;;
+  margin-right: 30px;
+  ;
 }
+
 .icon-btn {
   background: var(--glass);
   border: none;
@@ -125,7 +138,7 @@ margin-right: 30px;;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   box-shadow: var(--shadow);
 }
 
@@ -167,7 +180,7 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: relative;
   font-size: 2rem;
   padding: 0.2rem 1.5rem;
@@ -223,18 +236,27 @@ footer p {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .icon-btn svg {
-  
+
   vertical-align: middle;
   transition: all 0.6s ease;
 }
 
-.sun, .moon {
+.sun,
+.moon {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -243,116 +265,141 @@ footer p {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.15); opacity: 0.7; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
 }
 
 /* Smooth transition for dark/light mode across all elements */
-body, header, footer, main, .icon-btn, .socials a, .footer-logo, .logo, svg, * {
+body,
+header,
+footer,
+main,
+.icon-btn,
+.socials a,
+.footer-logo,
+.logo,
+svg,
+* {
   transition: background 0.5s ease, color 0.5s ease, fill 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
 }
 
-        .container {
-            max-width: 980px;
-            margin: 80px auto;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #2a2a2a, #000);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-     
-        
-        .subtitle {
-  font-weight: bold; /* Makes the text bold */
-  background: linear-gradient(to right, #4285F4, #9B72CB); /* Gradient colors */
-  -webkit-background-clip: text; /* Clips the background to the shape of the text */
-  background-clip: text; /* Standard property for clipping */
-  -webkit-text-fill-color: transparent; /* Makes the text color transparent so the background shows through */
-  color: transparent; /* Fallback for older browsers */
+.container {
+  max-width: 980px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #2a2a2a, #000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+.subtitle {
+  font-weight: bold;
+  /* Makes the text bold */
+  background: linear-gradient(to right, #4285F4, #9B72CB);
+  /* Gradient colors */
+  -webkit-background-clip: text;
+  /* Clips the background to the shape of the text */
+  background-clip: text;
+  /* Standard property for clipping */
+  -webkit-text-fill-color: transparent;
+  /* Makes the text color transparent so the background shows through */
+  color: transparent;
+  /* Fallback for older browsers */
   /* You might want to adjust font-size or other text properties as needed */
-  font-size: 2em; /* Example font size */
+  font-size: 2em;
+  /* Example font size */
 }
 
-        
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 4rem;
-            position: relative;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: 18px 20px;
-            font-size: 1.1rem;
-            border: 1px solid var(--apple-gray3);
-            border-radius: 30px;
-            background-color: white;
-            padding-left: 50px;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--apple-blue);
-            box-shadow: 0 1px 12px rgba(0, 113, 227, 0.2);
-        }
-        
-        .search-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            color: #86868b;
-        }
-        
-        
-        
-        .section-title {
-            font-size: 1.3rem;
-            color: #86868b;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-        
-   .card {
-    /* Your existing styles */
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 30px;
-    align-items: center;
-    margin: 100px auto;
-    width: 300px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    text-align: center;
-    z-index: 1;
-    backdrop-filter: blur(6px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    /* Add these for image centering */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  position: relative;
 }
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
-  }
-  .logos {
-    
-    height: 60px;
-    margin-bottom: 15px;
-  }
+
+.search-input {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 1.1rem;
+  border: 1px solid var(--apple-gray3);
+  border-radius: 30px;
+  background-color: white;
+  padding-left: 50px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--apple-blue);
+  box-shadow: 0 1px 12px rgba(0, 113, 227, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #86868b;
+}
 
 
+
+.section-title {
+  font-size: 1.3rem;
+  color: #86868b;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.card {
+  /* Your existing styles */
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  align-items: center;
+  margin: 100px auto;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 1;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Add these for image centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.logos {
+
+  height: 60px;
+  margin-bottom: 15px;
+}
